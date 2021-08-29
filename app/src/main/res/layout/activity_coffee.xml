@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Coffee">
+    <ImageView
+        style="@style/previous"
+        android:id="@+id/previous"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.899"
+        android:src="@drawable/previous" />
+
+    <ImageView
+        style="@style/notice"
+        android:id="@+id/imageView12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.283"
+        android:src="@drawable/menu_10" />
+
+    <ImageView
+        style="@style/notice"
+        android:id="@+id/imageView13"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView12"
+        app:layout_constraintVertical_bias="0.001"
+        android:src="@drawable/menu_11" />
+
+    <ImageView
+        style="@style/choice_left"
+        android:id="@+id/ice"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.699"
+        android:src="@drawable/coffee_ice" />
+
+    <ImageView
+        style="@style/choice_right"
+        android:id="@+id/hot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.699"
+        android:src="@drawable/coffee_hot" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        style="@style/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065"
+        android:src="@drawable/menu_logo" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        style="@style/menu"
+        app:layout_constraintEnd_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="true"
+        android:onClick="home"
+        android:src="@drawable/main" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        style="@style/menu_pay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/payment" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        style="@style/menu"
+        app:layout_constraintEnd_toStartOf="@+id/imageView10"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/choice" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        style="@style/menu"
+        app:layout_constraintEnd_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/check" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        style="@style/menu"
+        app:layout_constraintEnd_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/search" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="1312dp" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        style="@style/checkBox"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/box" />
+</android.support.constraint.ConstraintLayout>

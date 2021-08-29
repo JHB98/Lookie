@@ -1,0 +1,72 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Widget.Theme.Lookie.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+    <style name="previous">
+        <item name="android:layout_width">337dp</item>
+        <item name="android:layout_height">168dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:onClick">previous</item>
+        <item name="android:layout_marginStart">265dp</item>
+        <item name="android:layout_marginLeft">265dp</item>
+    </style>
+
+    <style name="choice">
+        <item name="android:layout_width">420dp</item>
+        <item name="android:layout_height">530dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:onClick">check</item>
+    </style>
+
+    <style name="choice_right" parent="@style/choice">
+        <item name="android:layout_marginStart">160dp</item>
+        <item name="android:layout_marginLeft">160dp</item>
+    </style>
+
+    <style name="choice_left" parent="@style/choice">
+        <item name="android:layout_marginEnd">160dp</item>
+        <item name="android:layout_marginRight">160dp</item>
+    </style>
+
+    <style name="notice">
+        <item name="android:layout_width">1280dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:scaleType">fitStart</item>
+    </style>
+
+    <style name="logo">
+        <item name="android:layout_width">175dp</item>
+        <item name="android:layout_height">175dp</item>
+        <item name="android:layout_marginStart">260dp</item>
+        <item name="android:layout_marginLeft">260dp</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="menu">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">125dp</item>
+        <item name="android:layout_marginTop">116dp</item>
+        <item name="android:layout_marginEnd">60dp</item>
+        <item name="android:layout_marginRight">60dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="menu_pay" parent="menu">
+        <item name="android:layout_marginEnd">800dp</item>
+        <item name="android:layout_marginRight">800dp</item>
+    </style>
+
+    <style name="checkBox">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">200dp</item>
+        <item name="android:layout_marginTop">52dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:layout_marginRight">32dp</item>
+    </style>
+</resources>

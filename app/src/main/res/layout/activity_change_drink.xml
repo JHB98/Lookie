@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChangeDrink">
+    <ImageView
+        android:id="@+id/imageView6"
+        style="@style/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065"
+        android:src="@drawable/menu_logo" />
+
+    <ImageView
+        android:id="@+id/print"
+        android:layout_width="800dp"
+        android:layout_height="800dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.215" />
+
+    <ImageView
+        android:id="@+id/imageView34"
+        android:onClick="finish"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="1524dp"
+        android:layout_marginLeft="1524dp"
+        android:layout_marginBottom="244dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/choice_finish" />
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="180dp"
+        android:layout_height="130dp"
+        android:layout_marginBottom="344dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView38"
+        app:srcCompat="@drawable/plus" />
+
+    <ImageView
+        android:id="@+id/imageView38"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="484dp"
+        android:layout_marginLeft="484dp"
+        android:layout_marginBottom="84dp"
+        app:layout_constraintBottom_toTopOf="@+id/price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ref_num" />
+
+    <ImageView
+        android:id="@+id/imageView35"
+        android:layout_width="180dp"
+        android:layout_height="130dp"
+        android:layout_marginBottom="344dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView38"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/minus" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="296dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="388dp"
+        android:layout_marginLeft="388dp"
+        android:layout_marginBottom="160dp"
+        android:fontFamily="@font/noto_sans"
+        android:gravity="center"
+        android:letterSpacing="-0.02"
+        android:textColor="#4b4847"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/name"
+        android:layout_width="460dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="304dp"
+        android:layout_marginLeft="304dp"
+        android:layout_marginTop="672dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/print" />
+
+    <TextView
+        android:id="@+id/slide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/noto_sans"
+        android:letterSpacing="-0.02"
+        android:text="옆으로 밀어 더 많은 메뉴를 확인하세요!"
+        android:textColor="#4b4847"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.946" />
+
+    <HorizontalScrollView
+        android:layout_width="1500dp"
+        android:layout_height="820dp"
+        android:layout_marginStart="960dp"
+        android:layout_marginLeft="960dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.332">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/coke_n_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/coke_n_m_change" />
+
+                <ImageView
+                    android:id="@+id/fanta_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/fanta_m_change" />
+
+                <ImageView
+                    android:id="@+id/sp_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/sp_m_change" />
+                <ImageView
+                    android:id="@+id/c_shake_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/c_shake_m_change" />
+                <ImageView
+                    android:id="@+id/pr_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/pr_m_change" />
+                <ImageView
+                    android:id="@+id/ico_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/ico_m_change" />
+                <ImageView
+                    android:id="@+id/icl_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/icl_m_change" />
+                <ImageView
+                    android:id="@+id/ep_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/ep_m_change" />
+                <ImageView
+                    android:id="@+id/cl_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/cl_m_change" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <ImageView
+                    android:id="@+id/imageView37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_span="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/coke_0_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/coke_0_m_change" />
+
+                <ImageView
+                    android:id="@+id/bs_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/bs_m_change" />
+
+                <ImageView
+                    android:id="@+id/s_shake_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/s_shake_m_change" />
+                <ImageView
+                    android:id="@+id/ia_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/ia_m_change" />
+                <ImageView
+                    android:id="@+id/a_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/a_m_change" />
+                <ImageView
+                    android:id="@+id/cpc_m"
+                    android:onClick="choice"
+                    android:layout_width="500dp"
+                    android:layout_height="400dp"
+                    app:srcCompat="@drawable/cpc_m_change" />
+            </TableRow>
+        </TableLayout>
+    </HorizontalScrollView>
+</android.support.constraint.ConstraintLayout>

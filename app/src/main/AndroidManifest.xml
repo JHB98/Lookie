@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lookie">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ChangeDrink"></activity>
+        <activity android:name=".ChangeDessert" />
+        <activity android:name=".BurgerSet" />
+        <activity android:name=".Finish" />
+        <activity android:name=".InputCard" />
+        <activity android:name=".ChoicePayment" />
+        <activity android:name=".ForhereOrTogo" />
+        <activity android:name=".OrderCheck" />
+        <activity android:name=".DessertSize" />
+        <activity android:name=".DrinkSize" />
+        <activity android:name=".SingleOrSet" />
+        <activity android:name=".PrintMenu" />
+        <activity android:name=".Coffee" />
+        <activity android:name=".Variety" />
+        <activity android:name=".BurgerNormal" />
+        <activity android:name=".BurgerDouble" />
+        <activity android:name=".Dessert" />
+        <activity android:name=".Drink" />
+        <activity android:name=".Burger" />
+        <activity android:name=".MenuChoice" />
+        <activity android:name=".menuSearch" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
