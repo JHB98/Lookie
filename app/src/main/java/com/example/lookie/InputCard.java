@@ -9,11 +9,12 @@ import android.widget.ImageView;
 
 public class InputCard extends AppCompatActivity {
 
+    Handler hand;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_card);
-        Handler hand = new Handler();
+        hand = new Handler();
         hand.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -28,6 +29,7 @@ public class InputCard extends AppCompatActivity {
     {
         ImageView iv=(ImageView)findViewById(R.id.cancel_all);
         iv.setImageResource(R.drawable.cancel_all_check);
+        hand.removeMessages(0);
         Intent i=new Intent(this,ChoicePayment.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);

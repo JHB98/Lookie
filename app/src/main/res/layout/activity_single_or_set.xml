@@ -52,17 +52,19 @@
         app:layout_constraintTop_toTopOf="@+id/imageView14"
         app:srcCompat="@drawable/order" />
 
-    <ImageView
-        android:id="@+id/imageView16"
+    <TextView
+        android:id="@+id/cart"
+        android:fontFamily="@font/noto_sans"
+        android:letterSpacing="-0.02"
+        android:textColor="#4b4847"
+        android:textSize="20dp"
         android:layout_width="520dp"
-        android:layout_height="200dp"
+        android:layout_height="500dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="128dp"
-        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="@+id/imageView14"
-        app:layout_constraintTop_toTopOf="@+id/imageView14"
-        app:srcCompat="@drawable/order_list" />
+        app:layout_constraintTop_toTopOf="@+id/imageView14" />
 
     <ImageView
         android:id="@+id/imageView18"
@@ -185,6 +187,7 @@
 
     <ImageView
         android:id="@+id/single"
+        android:onClick="single"
         android:layout_width="350dp"
         android:layout_height="400dp"
         android:layout_marginStart="840dp"
@@ -211,40 +214,47 @@
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
         android:layout_marginBottom="268dp"
+        android:onClick="next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/previous"
         app:srcCompat="@drawable/next" />
 
     <ImageView
-        android:id="@+id/imageView36"
+        android:id="@+id/plus"
+        android:onClick="plus"
         android:layout_width="180dp"
         android:layout_height="130dp"
         android:layout_marginBottom="456dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView38"
+        app:layout_constraintStart_toEndOf="@+id/count"
         app:srcCompat="@drawable/plus" />
 
     <ImageView
-        android:id="@+id/imageView35"
+        android:id="@+id/minus"
+        android:onClick="minus"
         android:layout_width="180dp"
         android:layout_height="130dp"
         android:layout_marginBottom="456dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView38"
+        app:layout_constraintEnd_toStartOf="@+id/count"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/minus" />
 
-    <ImageView
-        android:id="@+id/imageView38"
+    <TextView
+        android:id="@+id/count"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="476dp"
         android:layout_marginLeft="476dp"
         android:layout_marginBottom="80dp"
+        android:fontFamily="@font/noto_sans"
+        android:gravity="center"
+        android:letterSpacing="-0.02"
+        android:textColor="#4b4847"
+        android:textSize="50dp"
         app:layout_constraintBottom_toTopOf="@+id/price"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ref_num" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/price"

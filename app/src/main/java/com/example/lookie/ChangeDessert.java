@@ -72,9 +72,29 @@ public class ChangeDessert extends AppCompatActivity {
     }
     public void finish(View view)
     {
+        ImageView iv=findViewById(view.getId());
+        iv.setImageResource(R.drawable.choice_finish_check);
         Intent i=new Intent(this,BurgerSet.class);
         i.putExtra("dessert",dessert);
         i.putExtra("from","dessert");
+        switch (dessert)
+        {
+            case "ff_l":
+                i.putExtra("change",700);
+                break;
+            case "gc_m":
+            case "msc_m":
+                i.putExtra("change",400);
+                break;
+            case "mct_m":
+                i.putExtra("change",900);
+                break;
+            case "mn_m":
+                i.putExtra("change",100);
+                break;
+            default:
+                i.putExtra("change",0);
+        }
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(i);

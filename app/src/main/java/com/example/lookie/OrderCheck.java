@@ -29,8 +29,7 @@ public class OrderCheck extends AppCompatActivity {
             case R.id.no2:
                 i=(ImageView)findViewById(R.id.no2);
                 i.setImageResource(R.drawable.no2_check);
-                intent=new Intent(this,ForhereOrTogo.class);
-                //intent=new Intent(this,BurgerDouble.class);
+                intent=new Intent(this,Cart.class);
                 startActivity(intent);
                 break;
         }

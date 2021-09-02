@@ -28,8 +28,8 @@ public class menuSearch extends AppCompatActivity{
             case R.id.no:
                 i=(ImageView)findViewById(R.id.no);
                 i.setImageResource(R.drawable.no_check);
-                intent=new Intent(this,MenuChoice.class);//나중에 일반용 UI 접속으로 변경 해야함.
-                startActivity(intent);
+                //intent=new Intent(this,MenuChoice.class);
+                //startActivity(intent);
                 break;
         }
     }

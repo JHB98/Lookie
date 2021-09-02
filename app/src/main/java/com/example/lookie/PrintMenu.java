@@ -1,20 +1,13 @@
 package com.example.lookie;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Handler;
-import android.os.Parcelable;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.util.TypedValue;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -22,7 +15,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -31,7 +26,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static java.lang.Thread.sleep;
 
 public class PrintMenu extends AppCompatActivity {
 
@@ -39,7 +33,6 @@ public class PrintMenu extends AppCompatActivity {
     private LinearLayout l;
     private int idCnt=0;
     private ImageView i;
-    private ImageView ref;
     private TextView tv;
     private String menu;
     private Intent intent;
@@ -223,6 +216,51 @@ public class PrintMenu extends AppCompatActivity {
                     Toast.makeText(PrintMenu.this, "정보받아오기 실패", Toast.LENGTH_LONG).show();
                 }
             });
+        }
+        printMenu();
+    }
+    public void printMenu()
+    {
+        BurgerSetData burgerSet;
+        BurgerCartData burger;
+        DrinkCartData drink;
+        DessertCartData dessert;
+        TextView tv;
+        Gson gson;
+        gson=new GsonBuilder().create();//버거 단품 = menu, 버거세트 = bmenu, 음료 = dmenu, 디저트 = demenu
+        MenuNum menuNum=(MenuNum)getApplication();
+        int bnum=menuNum.getBnum();
+        int dnum=menuNum.getDnum();
+        int denum=menuNum.getDenum();
+        int num=menuNum.getNum();
+        SharedPreferences sp=getSharedPreferences("cart",MODE_PRIVATE);
+        tv=findViewById(R.id.cart);
+        for(int i=1;i<num;i++)
+        {
+            String menu = sp.getString("menu" + String.valueOf(i), "");
+            burger = gson.fromJson(menu, BurgerCartData.class);
+            tv.append("burger : " + burger.getBurger() + "\nprice : " + burger.getPrice() + "\namount : " + burger.getAmount()+"\n");
+        }
+        for(int i=1;i<bnum;i++)
+        {
+            String menu = sp.getString("bmenu" + String.valueOf(i), "");
+            burgerSet = gson.fromJson(menu, BurgerSetData.class);
+            tv.append("burger : " + burgerSet.getBurger() + "\ndessert : " + burgerSet.getDessert() +
+                    "\ndrink : " + burgerSet.getDrink() + "\nprice : " + burgerSet.getPrice() + "\namount : " + burgerSet.getAmount()+"\n");
+        }
+        for(int i=1;i<dnum;i++)
+        {
+            String menu = sp.getString("dmenu" + String.valueOf(i), "");
+            drink = gson.fromJson(menu, DrinkCartData.class);
+            tv.append("drink : " + drink.getDrink() + "\nsize : " + drink.getSize() +
+                    "\nprice : " + drink.getPrice() + "\namount : " + drink.getAmount()+"\n");
+        }
+        for(int i=1;i<denum;i++)
+        {
+            String menu = sp.getString("demenu" + String.valueOf(i), "");
+            dessert = gson.fromJson(menu, DessertCartData.class);
+            tv.append("dessert : " + dessert.getDessert() + "\nsize : " + dessert.getSize() +
+                    "\nprice : " + dessert.getPrice() + "\namount : " + dessert.getAmount()+"\n");
         }
     }
     public void home(View view)

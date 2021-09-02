@@ -1,6 +1,7 @@
 package com.example.lookie;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,30 +50,46 @@ public class ChangeDrink extends AppCompatActivity {
         {
             if(check)
             {
-                iv=findViewById(saveId);
-                String saveName=getResources().getResourceName(saveId);
-                saveName=saveName.substring(saveName.indexOf("/")+1);
-                iv.setImageResource(getResources().getIdentifier("@drawable/" + saveName+"_change", "drawable", getPackageName()));
-                iv=findViewById(id);
-                iv.setImageResource(getResources().getIdentifier("@drawable/" + name+"_change_check", "drawable", getPackageName()));
-                saveId=id;
-                drink=name;
+                iv = findViewById(saveId);
+                String saveName = getResources().getResourceName(saveId);
+                saveName = saveName.substring(saveName.indexOf("/") + 1);
+                iv.setImageResource(getResources().getIdentifier("@drawable/" + saveName + "_change", "drawable", getPackageName()));
             }
-            else
-            {
-                iv=findViewById(id);
-                iv.setImageResource(getResources().getIdentifier("@drawable/" + name+"_change_check", "drawable", getPackageName()));
-                saveId=id;
-                drink=name;
-                check=true;
-            }
+            iv=findViewById(id);
+            iv.setImageResource(getResources().getIdentifier("@drawable/" + name+"_change_check", "drawable", getPackageName()));
+            saveId=id;
+            drink=name;
+            check=true;
         }
     }
     public void finish(View view)
     {
+        ImageView iv=findViewById(view.getId());
+        iv.setImageResource(R.drawable.choice_finish_check);
         Intent i=new Intent(this,BurgerSet.class);
         i.putExtra("drink",drink);
         i.putExtra("from","drink");
+        switch (drink)
+        {
+            case "a_m":
+            case "ia_m":
+                i.putExtra("change",700);
+                break;
+            case "bs_m":
+            case "c_shake_m":
+            case "cl_m":
+            case "cpc_m":
+            case "icl_m":
+            case "s_shake_m":
+                i.putExtra("change",1200);
+                break;
+            case "ep_m":
+            case "pr_m":
+                i.putExtra("change",200);
+                break;
+            default:
+                i.putExtra("change",0);
+        }
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(i);
