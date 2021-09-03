@@ -6,6 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.Currency;
+import java.util.Locale;
 
 public class ChoicePayment extends AppCompatActivity {
 
@@ -13,6 +17,8 @@ public class ChoicePayment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choice_payment);
+        TextView tv=findViewById(R.id.price);
+        tv.setText(Currency.getInstance(Locale.KOREA).getSymbol()+" "+String.valueOf(getIntent().getIntExtra("sum",0)));
     }
     public void check(View view)
     {

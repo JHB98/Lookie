@@ -2,6 +2,7 @@ package com.example.lookie;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
@@ -40,6 +41,7 @@ public class PrintMenu extends AppCompatActivity {
     private int extra2;
     private String path;
     private String previous;
+    private PrintCart print;
     private final String BASE_URL="http://192.168.56.1:8080";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -217,51 +219,30 @@ public class PrintMenu extends AppCompatActivity {
                 }
             });
         }
-        printMenu();
-    }
-    public void printMenu()
-    {
-        BurgerSetData burgerSet;
-        BurgerCartData burger;
-        DrinkCartData drink;
-        DessertCartData dessert;
-        TextView tv;
-        Gson gson;
-        gson=new GsonBuilder().create();//버거 단품 = menu, 버거세트 = bmenu, 음료 = dmenu, 디저트 = demenu
+        print=new PrintCart();
         MenuNum menuNum=(MenuNum)getApplication();
-        int bnum=menuNum.getBnum();
-        int dnum=menuNum.getDnum();
-        int denum=menuNum.getDenum();
-        int num=menuNum.getNum();
         SharedPreferences sp=getSharedPreferences("cart",MODE_PRIVATE);
         tv=findViewById(R.id.cart);
-        for(int i=1;i<num;i++)
-        {
-            String menu = sp.getString("menu" + String.valueOf(i), "");
-            burger = gson.fromJson(menu, BurgerCartData.class);
-            tv.append("burger : " + burger.getBurger() + "\nprice : " + burger.getPrice() + "\namount : " + burger.getAmount()+"\n");
-        }
-        for(int i=1;i<bnum;i++)
-        {
-            String menu = sp.getString("bmenu" + String.valueOf(i), "");
-            burgerSet = gson.fromJson(menu, BurgerSetData.class);
-            tv.append("burger : " + burgerSet.getBurger() + "\ndessert : " + burgerSet.getDessert() +
-                    "\ndrink : " + burgerSet.getDrink() + "\nprice : " + burgerSet.getPrice() + "\namount : " + burgerSet.getAmount()+"\n");
-        }
-        for(int i=1;i<dnum;i++)
-        {
-            String menu = sp.getString("dmenu" + String.valueOf(i), "");
-            drink = gson.fromJson(menu, DrinkCartData.class);
-            tv.append("drink : " + drink.getDrink() + "\nsize : " + drink.getSize() +
-                    "\nprice : " + drink.getPrice() + "\namount : " + drink.getAmount()+"\n");
-        }
-        for(int i=1;i<denum;i++)
-        {
-            String menu = sp.getString("demenu" + String.valueOf(i), "");
-            dessert = gson.fromJson(menu, DessertCartData.class);
-            tv.append("dessert : " + dessert.getDessert() + "\nsize : " + dessert.getSize() +
-                    "\nprice : " + dessert.getPrice() + "\namount : " + dessert.getAmount()+"\n");
-        }
+        TextView priceAll=findViewById(R.id.priceAll);
+        TextView orderPrice=findViewById(R.id.orderPrice);
+        print.printMenu(menuNum,sp,tv,orderPrice,priceAll);
+    }
+    public void cancelAll(View view)
+    {
+        MenuNum menuNum=(MenuNum)getApplication();
+        SharedPreferences sp=getSharedPreferences("cart",MODE_PRIVATE);
+        tv=findViewById(R.id.cart);
+        ImageView iv=findViewById(view.getId());
+        TextView priceAll=findViewById(R.id.priceAll);
+        TextView orderPrice=findViewById(R.id.orderPrice);
+        print.cancelAll(iv,menuNum,sp,tv,orderPrice,priceAll);
+    }
+    public void pay(View view)
+    {
+        ImageView iv=findViewById(view.getId());
+        iv.setImageResource(R.drawable.pay_check);
+        Intent intent=new Intent(this,OrderCheck.class);
+        startActivity(intent);
     }
     public void home(View view)
     {

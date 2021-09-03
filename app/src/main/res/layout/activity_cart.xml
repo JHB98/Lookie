@@ -87,6 +87,7 @@
 
     <ImageView
         android:id="@+id/imageView19"
+        android:onClick="cancelAll"
         android:layout_width="445dp"
         android:layout_height="110dp"
         android:layout_marginEnd="60dp"
@@ -103,31 +104,39 @@
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView24"
+        app:layout_constraintBottom_toTopOf="@+id/priceAll"
         app:layout_constraintEnd_toEndOf="@+id/imageView14"
         app:srcCompat="@drawable/sale_price_1" />
 
-    <ImageView
-        android:id="@+id/imageView24"
+    <TextView
+        android:id="@+id/priceAll"
+        android:fontFamily="@font/noto_sans"
+        android:letterSpacing="-0.02"
+        android:gravity="center"
+        android:textColor="#ffff0000"
+        android:textSize="20dp"
         android:layout_width="150dp"
         android:layout_height="65dp"
         android:layout_marginStart="136dp"
         android:layout_marginLeft="136dp"
         android:layout_marginBottom="52dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView19"
-        app:layout_constraintStart_toEndOf="@+id/imageView25"
-        app:srcCompat="@drawable/pay_price_1" />
+        app:layout_constraintStart_toEndOf="@+id/imageView25"/>
 
-    <ImageView
-        android:id="@+id/imageView21"
+    <TextView
+        android:id="@+id/orderPrice"
+        android:fontFamily="@font/noto_sans"
+        android:letterSpacing="-0.02"
+        android:gravity="center"
+        android:textColor="#4b4847"
+        android:textSize="20dp"
         android:layout_width="120dp"
         android:layout_height="75dp"
         android:layout_marginEnd="68dp"
         android:layout_marginRight="68dp"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView23"
-        app:layout_constraintEnd_toEndOf="@+id/imageView14"
-        app:srcCompat="@drawable/order_price_1" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView14" />
 
     <ImageView
         android:id="@+id/imageView25"

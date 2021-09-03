@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,8 +30,6 @@ public class ChangeDrink extends AppCompatActivity {
         i.setImageResource(getResources().getIdentifier("@drawable/" + b.getId()+"_set", "drawable", getPackageName()));
         i=findViewById(R.id.name);
         i.setImageResource(getResources().getIdentifier("@drawable/" + b.getId()+"_set_name", "drawable", getPackageName()));
-        tv=findViewById(R.id.price);
-        tv.setText(Currency.getInstance(Locale.KOREA).getSymbol()+" "+String.valueOf(b.getSet_price()));
     }
     public void choice(View view)
     {
@@ -69,6 +68,10 @@ public class ChangeDrink extends AppCompatActivity {
         Intent i=new Intent(this,BurgerSet.class);
         i.putExtra("drink",drink);
         i.putExtra("from","drink");
+        if(TextUtils.isEmpty(drink))
+        {
+            drink=" ";
+        }
         switch (drink)
         {
             case "a_m":

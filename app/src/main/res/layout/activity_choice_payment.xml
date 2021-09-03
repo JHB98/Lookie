@@ -15,24 +15,15 @@
         android:src="@drawable/cash" />
 
     <ImageView
+        android:id="@+id/imageView13"
         style="@style/notice"
-        android:id="@+id/imageView12"
+        android:src="@drawable/menu_19"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283"
-        android:src="@drawable/menu_18" />
-
-    <ImageView
-        style="@style/notice"
-        android:id="@+id/imageView13"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView12"
-        app:layout_constraintVertical_bias="0.001"
-        android:src="@drawable/menu_19" />
+        app:layout_constraintVertical_bias="0.356" />
 
     <ImageView
         android:id="@+id/card"
@@ -103,6 +94,43 @@
         android:layout_marginEnd="800dp"
         android:layout_marginRight="800dp"
         android:src="@drawable/box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginStart="616dp"
+        android:layout_marginLeft="616dp"
+        android:layout_marginTop="376dp"
+        android:src="@drawable/pay_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/price"
+        android:fontFamily="@font/noto_sans"
+        android:letterSpacing="-0.02"
+        android:gravity="center"
+        android:textColor="#ffff0000"
+        android:textSize="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="376dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView21"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toEndOf="@+id/imageView16"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="376dp"
+        android:layout_marginEnd="1196dp"
+        android:layout_marginRight="1196dp"
+        android:src="@drawable/pay_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

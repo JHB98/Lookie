@@ -36,6 +36,7 @@ public class InputCard extends AppCompatActivity {
     }
     public void home(View view)
     {
+        hand.removeMessages(0);
         Intent intent=new Intent(this,MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
